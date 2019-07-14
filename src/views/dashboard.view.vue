@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import ContentToolbar from '../components/ContentToolbar.vue';
+import ContentToolbar from '@/components/content-toolbar.vue';
 
 
 @Component({

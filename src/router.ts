@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Dashboard from './views/dashboard.view.vue';
-import Garage from './views/garage.view.vue';
-import Vehicle from './views/vehicle.view.vue';
+import Dashboard from '@/views/dashboard.view.vue';
+import Garage from '@/views/garage/garage.view.vue';
+import Vehicle from '@/views/garage/vehicle.view.vue';
 
 Vue.use(Router);
 
@@ -21,16 +21,15 @@ export default new Router({
       component: Garage,
     },
     {
-      path: '/vehicle',
+      path: '/vehicle/:vehicleId',
       name: 'vehicle',
       component: Vehicle,
-      props: true,
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/*',
+      name: 'page-not-found',
       component: () =>
-        import('./views/About.vue'),
+        import('@/components/no-found.vue'),
     },
   ],
 });

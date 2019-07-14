@@ -13,7 +13,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import Drawer from './components/Drawer.vue';
+import Drawer from '@/components/main-drawer.vue';
 
 
 @Component({

@@ -56,9 +56,11 @@ import router from '../router';
 
 @Component
 export default class Drawer extends Vue {
+
   private appRoute(routeName: string): void {
     router.push({ name: routeName });
   }
+
   private data() {
     return {
       drawer: null,

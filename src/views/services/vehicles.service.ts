@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { IVehicle, IContainer } from '../types';
+import { IVehicle, IContainer } from '@/views/types';
 
 const host = 'http://127.0.0.1:8881';
 const garageApi = '/garage';
-
 
 class VehicleService {
     private vehicles: IVehicle[] = [];
@@ -26,15 +25,28 @@ class VehicleService {
      * createVehicle
      */
     public createVehicle(vehicle: IVehicle) {
-        console.log(vehicle);
-        return axios.post<IVehicle>(`${host}${garageApi}/vehicles`, { vehicle });
+        return axios.post(`${host}${garageApi}/vehicles`, vehicle);
+    }
+
+    /**
+     * addVehicleImage
+     */
+    public addVehicleImage(id: number, image: string) {
+        const formData = new FormData();
+        formData.append('image', image);
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data',
+            },
+        };
+        return axios.patch(`${host}${garageApi}/vehicle/${id}/set-image`, formData, config);
     }
 
     /**
      * updateVehicle
      */
     public updateVehicle(id: number, vehicle: IVehicle) {
-        return axios.put<IVehicle>(`${host}${garageApi}/vehicles/${id}`, { vehicle });
+        return axios.put(`${host}${garageApi}/vehicles/${id}`, vehicle);
     }
 }
 

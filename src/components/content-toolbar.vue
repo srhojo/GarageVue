@@ -13,10 +13,7 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import router from '../router';
-
-
-
+import router from '@/router';
 
 @Component
 export default class CoontentToolbar extends Vue {
@@ -27,15 +24,7 @@ export default class CoontentToolbar extends Vue {
     default: () => false,
   };
 
-  private historyBack() {
-    router.go(-1);
-  }
-
-
+  private historyBack = () => router.go(-1);
 }
 </script>
-
-<style lang='sass' scoped>
-
-</style>
 
