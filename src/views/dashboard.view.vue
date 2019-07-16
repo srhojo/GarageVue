@@ -15,15 +15,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 import ContentToolbar from '@/components/content-toolbar.vue';
 
-
 @Component({
-  components: {
-    ContentToolbar,
-  },
+    components: {
+        ContentToolbar,
+    },
 })
-export default class Dashboard extends Vue {
-
-}
+export default class Dashboard extends Vue {}
 </script>
 
 <style lang="sass" scoped>

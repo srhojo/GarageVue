@@ -1,11 +1,11 @@
 export interface IContainer {
     values: any[];
-    pagination: IPagination;
+    pagination?: IPagination;
 
 }
 
 export interface IPagination {
     limit: number;
     offset: number;
-    totalElements: number;
+    totalElements?: number;
 }

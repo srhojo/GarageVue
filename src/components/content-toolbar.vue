@@ -15,16 +15,20 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import router from '@/router';
 
-@Component
-export default class CoontentToolbar extends Vue {
-  @Prop() private title!: string;
-  @Prop() private buttons!: any;
-  @Prop() private backButton!: {
-    type: boolean,
-    default: () => false,
-  };
+export class ToolBarButton {
+    constructor(public name: string, public icon: string, public method?: any) {}
+}
 
-  private historyBack = () => router.go(-1);
+@Component
+export default class ContentToolbar extends Vue {
+    @Prop() private title!: string;
+    @Prop() private buttons!: ToolBarButton[];
+    @Prop() private backButton!: {
+        type: boolean;
+        default: () => false;
+    };
+
+    private historyBack = () => router.go(-1);
 }
 </script>
 

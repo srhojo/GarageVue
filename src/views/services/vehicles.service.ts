@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IVehicle, IContainer } from '@/views/types';
+import { IVehicle, IContainer } from './types';
 
 const host = 'http://127.0.0.1:8881';
 const garageApi = '/garage';
@@ -47,6 +47,15 @@ class VehicleService {
      */
     public updateVehicle(id: number, vehicle: IVehicle) {
         return axios.put(`${host}${garageApi}/vehicles/${id}`, vehicle);
+    }
+
+    /**
+     * deleteVehicle
+     * 
+     * @param id vehicle id
+     */
+    public deleteVehicle(id: number) {
+        return axios.delete(`${host}${garageApi}/vehicles/${id}`);
     }
 }
 
